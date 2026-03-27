@@ -1,0 +1,20 @@
+Optimización Procesos Muestreo Mediante Uso Herramientas Simulación Proceso Analítico Jerárquico Instituto Ingeniería Nuevas Tecnologías determinación Índice Calidad Agua ajuste realidad particular río base centrar muestreo parámetro el contaminación recurso hídrico mayor esperado país trabajo ser principal recurso hídrico Partido Merlo
+
+debido aporte acumulado contaminante vertido todo cuenca solo valor numérico resultante sumatorio determinado parámetro seleccionado base representatividad respecto calidad recurso hídrico Si bien ideal proyecto característico contar mayor cantidad poder hacer muestreo conjunto preciso elemento composición realizar primeramente trabajo campo recoger determinar cuál mejor forma generar dato sintético problema parámetro mínimo indispensable cálculo ICA cuenca alto Río Contexto actividad realizar grupo investigación Universidad Nacional Oeste relación proyecto final describir cómo funcionar proceso permitir analizar jerarquizar parámetro describir comportamiento
+
+clima floro faún contexto cuencar cuenca el gestión recurso hídrico fundamental asegurar acceso agua pertinente necesario contar accesibilidad grande cantidad dato obstaculizar enormemente capacidad país subdesarrollado tomar el carencia dato histórico presupuesto monitoreo muestreo agua dificulto enormemente identificación resolución problema relacionado este deterioro ser especialmente notable último década acelerado
+
+transparencia agua disponibilidad luz organismos salinidad poder relacionado fuente contaminación análisis cada muestra mucho equipo vez requerir mantenimiento
+
+decisión enfrentar problema complejo descomponiéndolo jerarquir el primero paso AHP descomponer problema decisión jerarquía peso prioridad cada elemento mediante normalización matriz
+
+el AHP incluir mecanismo verificar consistencia Definición Problema el monitoreo ambiental Río Reconquista tarea complejo exigir Esto asegurar recolección análisis muestra realizar manera Solución Propuesta uno forma reducir costo muestreir optimizar cantidad parámetro reconquista necesario medir parámetro analizado Para él ir utilizar herramienta generación dato sintético desarrollado estudiar relación parámetro intentar forma desechar parámetro
+
+Desarrollo Solución medido preferencia alternativo renglón i compar aproximación vector pesos normalizar matriz calcular importancia
+
+uno vez obtener vector pesos deber analizar él consistencia establecer si Para analizar si grado inconsistencia aceptable utilizar razón consistencia él concluir matriz comparación elaborado consistente poder cota superior inferior penalizar restar aporte variable ICA función
+
+calculado considerar uso recreativo agua resumir resultado obtenido dato concentrado valor bajo cola distribución extender Conclusiones En contexto poder afirmar si reducimos parámetro muestreir diez seis incurriríar error alto cálculo ICA actual contexto evaluación cuatro diez parámetro inicial sufrir deterioro fin mejorar progresivamente calidad agua hacer él apto Referencias
+
+
+

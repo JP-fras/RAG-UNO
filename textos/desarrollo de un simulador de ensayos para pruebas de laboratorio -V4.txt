@@ -1,0 +1,20 @@
+Contrastación Métodos Simulación Ampliar Evidencias Vistas Desarrollar Proceso determinar cuál apropiado recrear comportamiento ser conocer poder realizar proceso explotación información probabilidad reflejen precisión realidad obtener conclusión Desde Instituto Ingenierías Nuevas tecnología Universidad Nacional Oeste llevar adelante proyecto investigación objetivo analizar propiedad aguo Río Reconquista objetivo poder predecir futuro posible foco contaminación cambio llamativo simulación dato fin ampliar nivel evidenciar comenzar
+
+con referencia mencionado método Montecarlo constituir el simulación Montecarlo tipo simulación estocástico permitir menos variable mismo tomado dato azar el método cuestión basar generación múltiple muestra aleatorio estimar solución problema complejo poder ser difícil imposible uno principal ventaja método Montecarlo versatilidad el proceso simulación consistir calcular medio desviación estándar estadístico emplear parámetro ajustar distribución Simulación defecto Truncar valor máximo mínimo Truncar cero Distribuciones no Negativas Transformación Datos Autoencoder básico el desafío punto identificar cuál distinto variant simulación En siguiente apartado describir consistir cada técnica
+
+partido Merlo desarrollo implementación herramiento realizar tarea muestreo análisis químico propiedad agua cinco dato comprender cómo composición agua cómo evolución
+
+uno autoencoder tipo red neuronal utilizado principalmente aprender el objetivo autoencoder salida decodificador cercano utilizar diverso aplicación reducción ruido imagen generación principal radicar mientras autoencoder básico centrar compresión uno autoencoder variacional solo aprender mapear dato espacio latente saber ciencia cierto cuál ajustar mejor generación dato sintético imitar propiedad característico dato real obtenido Río
+
+máxima mínimo cada variable fin prescindir valor
+
+
+
+
+
+
+
+llegar conclusión ninguno método evaluado ajusta iniciar proceso mineer dato objetivo identificar patrón set entrenamiento significativo respetar forma distribución técnico basado proceso estadístico mostrar ser robusto problema número generar base semilla cumplir forma distribución independientemente mostrar
+
+si bien lograr identificar método lograr ajustar valor simulado analizar cómo comportamientir método respecto nuevo
+

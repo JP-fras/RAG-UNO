@@ -1,0 +1,214 @@
+trabajo final Contrastación Métodos Generación Datos Sintéticos entrenamiento modelos aprendizaje automático evaluación recurso hídrico Marcelo Fabián Esperanza Trabajo presentado obtener título Licenciado informáticar
+
+Resumen el conservación protección recurso hídrico constituir tarea fundamental nivel En mucho ocasión resultar factible utilizar dispositivo medición automático apropiado recrear comportamiento variable utilizado cálculo necesitar esperar año obtener masa dato importante permitir aplicar técnico explotación dato entrenar modelo machine learning
+
+Dedicatoria
+
+Agradecimientos Leí alguno vez analogía trayectoria vital resultante surgido sumar decisión tomar último resultar condicionado mayor menor grado
+
+Índice General
+
+
+
+Índice Gráficos
+
+Introducción Problema investigación preliminar Con propósito elaborar modelo determinación Índice Calidad identificar principal impedimento inexistencia dato histórico faltar presupuesto instalación sensor automático monitoreo este inconveniente momento recolectar dato presentar numeroso trabajo resultar inviable encarar cualquiera proceso explotación dato utilizar técnica otro caso citar investigación biomédico escasez dato este escasez dato dificultar trabajo investigador impedir arribar
+
+finalmente poder citar ejemplo caso detección arma escena videovigilada detección temprano situación objeto peligroso vital contar grande conjunto dato necesario entrenamiento algoritmos el problema cuestión extremadamente significativo gran importancia contaminación poder causar enfermedad grave representar riesgo considerable el gestión recurso hídrico fundamental asegurar acceso agua potable uno actividad importante gestión recurso hídrico monitoreo obstaculizar enormemente capacidad país subdesarrollado tomar decisión el carencia dato histórico presupuesto monitoreo muestreo agua dificulto enormemente identificación resolución problema relacionado
+
+continuar problema específico disponer conjunto dato muestra dificultar caso implementación sistema monitoreo debido situación presentar entorno calidad agua programa monitoreo cuerpo agua permitir mejorar conocimiento dato parámetro cual requerir técnica especial análisis monitorear evaluar calidad agua cuenco alto Río Reconquista partido
+
+Solución Problema Identificado Con objeto elaborar modelo determinación Índice Calidad Agua cuencar alto Río Reconquista necesario identificar variable relevante grande conjunto dato calidad convertido requerimiento inexorable capacidad reconocimiento aprendizaje máquina estribar dato técnico aprendizaje profundo soler ser indispensable contar gran evidente necesidad contar gran cantidad dato abordar cualquiera dado dificultad surgida respecto obtención dato evidenciar mucho circunstancia real debido necesidad contar dato entrenar nuevo modelo llevado cabo estudio cómo generar él artificialmente automatización modelo matemático simulir dicho proceso finalidad obtener conjunto dato sintético artificial emulir dato real
+
+simulación deber ejecutar él varios vez largo vida proyecto ir Con referencia mencionado método Montecarlo constituir técnica sólidamente establecido proporcionar solución aproximado gran variedad estimar solución problema complejo poder ser difícil imposible ejecución cada escenario N iteración poder detener observa histograma dato alguno índice confiabilidad estabilizar concluir él obtener muestra N dato cada variable simulado proporcional número vez ejecutar deber ejecutar él cantidad autoencoders implementación entrenamiento inteligencia artificial servicio datar science finalidad crear modelo predecir componente agua reducido codificado dato entrado denominado espacio latente entrenar generar imagen salido conservar característica imagen generación dato sintético debido entrenamiento conseguir réplica poder considerar él representación condensar patrón relevante
+
+hacer distribución punto espacio latente seguir distribución modelo aprendizaje supervisado mezcla red neuronal útil medir similitud dato entrado salido penalizar red espacio latente producido autoencoder soler ser inconveniente mostrar aspecto crítico avanzar elaboración modelo determinación incorporación automatización modelo matemático simulir proceso rudimentario dado muestra simulado comportar error poder ser bastante antelación proceso simulación deber ejecutar él varios vez largo vida facilitar elaboración modelo final medido obtener dato ajustar
+
+estrategia generación dato sintético finalidad ampliar muestra obtenido componente agua Río Reconquista formar contar él utilizar estrategia trabajo modelo iterativo incremental modo ir avanzar forma gradual medida obtener dato real reducir establecer comportamiento dato tiempo así generar valor activación neurona relacionado conjunto dato adelantar tarea diseño entrenamiento RNA claramente sufrir modificación determinación Índice Calidad Agua cuencar alto Río Reconquista implicar conclusión obtenido poder cambiar medida obtener poder influir efectividad simulación precisión modelo
+
+parcialmente desafío ampliación mostrar conclusión obtenido deber interpretar él precaución debido posible limitación inherente modelo entrenado dato exclusivamente sintético capaz luego obtener literatura consultado concluido incorporación dato sintético ser generación dato sintético ofrecer mejor resultado modelo automatizar toma muestra mediante sensor monitoreir rio formar laboratorio electrónico característica resultar inviable dado presupuesto permitir evaluar calidad agua realizar tradicionalmente mediante tomar monitorear calidad agua aumentado popularidad debido facilidad río través medio autónomos medición repetido sensor Vinculación problema ámbito laboral el generación dato sintético través modelo matemático automatizado técnico inteligencia artificial abordar directamente problema identificado
+
+Departamento Investigación desarrollo Universidad Nacional Oeste respecto faltar dato suficiente realizar análisis estadístico confiable entrenar residir generación número alto situación contemplar variabilidad este capacidad generar dato sintético ayudar mitigar limitación tiempo importante aún hecho mejorar capacidad equipo presentar
+
+principalmente problema generalización resultado desbalanceo clase el objetivo principal proyecto colaborar trabajo radicar elaboración modelo determinación Índice Calidad Agua basado análisis sabido entrenar modelo necesario contar gran cantidad el falta evolución proyecto poder generar pérdida general interés continuar esfuerzo correr riesgo proyecto visto ineficaz mencionar anteriormente existir algoritmo generación dato sintético servir generado artificialmente complementar dato real conjunto
+
+automatizado técnico inteligencia artificial poder simular dato reflejen así realización análisis robusto obtención resultado significativo Aplicaciones práctico el utilidad solución propuesta radicar contar manera anticipado cantidad entender mecanismo variación calidad agua potable conclusión robusto significativo calidad aguo colaborir tomar grado protección salud público sólo posible si contar información Utilizar método eficaz evaluación calidad agua potable fundamental lograr resultado confiable facilitar tomar decisión acertado tal explana conducir mejor comprensión impacto ambiental planificación
+
+utilización red neuronal posible descifrar dicho interacción vida humano necesario considerar cierto parámetro químico alteración fuente contaminación diseñar estrategia mitigación prevención agua manero disminuir costo tiempo monitoreo tal recurso según respecto dificultad obtención muestra necesidad obtener comportamiento propio sistema través construcción modelo mostrar N dato cada variable interés cual Machine Learning hacer viable identificar establecer patrón comportamiento
+
+dato fin establecer relación patrón comportamiento existente predicción calidad agua utilizar diferente técnico inteligencia encontrar trabajo concernient utilización Máquinas Vectores efectivo mejorar precisión estimaciones calidad agua diverso Resumen problema solución Problema identificado objetivo fundamental estribar determinar Índice Calidad Agua cuencar alto suficiente dato realizar estudio preciso calidad agua tomar
+
+suficiente limitar capacidad obtener conclusión válido realizar análisis Solución Propuesta múltiple muestra aleatorio basada conjunto limitado dato real ser simulación obtener muestra N dato cada variable simulado representación reducido codificado dato entrado denominado espacio latente entrenar salida emule entrado modo conservir característica generación dato sintético debido entrenamiento conseguir réplica el uso combinado técnico proporcionar solución pragmático falta continuar ser desventajar entrenamiento modelos aprendizaje profundo Objetivo trabajo
+
+Objetivo general comportamiento variable real utilizado monitoreo evaluación objetivo específico estadístico técnico inteligencia artificial contar distinto transferencia resultado obtenido el trabajo arrostrado focalizar ampliación conjunto dato obtenido utilizar él luego determinación índizar calidad agua propio cuencar diverso sector utilizar agua proceso productivo creación modelo predicción calidad agua poder ser aplicar diferente uso otro posibilidad expandir estudio parte cuencar Río Reconquista
+
+acotado medir ninguno variable biológica tampoco considerar metal necesario considerar alteración producir precipitación cierto dato socioeconómico ayudar construir modelo completo calidad práctico allá determinación Índice Calidad Agua cuencar alta En particular contribuir formulación política regulación basado dato otro aplicación identificar promover conservación restauración ecosistema acuático mediante identificación área crítico evaluación impacto esgrimir optimización proceso evaluación calidad agua conducir mejor comprensión impacto ambiental planificación efectivo tal metal pesado producto químico orgánico pesticida herbicida sustancia tóxico causar enfermedad si consumir utilizar irrigación esfuerzo prevenir controlar contaminación físicoquímico río mantener gran aporte hecho investigación proveer base dato modelo
+
+poder ser utilizar investigación futuro estudiar impacto diferente sintético adaptabilidad escalabilidad técnico diferente contexto motivo creación dato sintético poder ser herramienta poderoso abordar ser deseable sistema generación dato sintético capaz responder Entre contaminant principal agua encontrar desecho orgánico Cuando tipo desecho encontrar exceso proliferación bacteria
+
+dato sintético utilizado medición calidad agua poder ser ajustar sintético simulación Montecarlo variante red neuronal recurso hídrico permitir generación dato sintético integrar programa generar dato sintético alto calidad adaptabl diverso necesidad herramienta valioso abordar escasez dato ámbito calidad agua Contribuciones principal el principal contribución trabajo final presentado incluir gran reducción obtener través generación dato sintético ulterior entrenamiento tomar decisión informado elaboración política protección saneamiento campo ingenieer softwarar mediante integración técnico inteligencia resultado obtenido resultar escalabl otorgar posibilidad transferencio afrontar limitación dato presupuesto mediante adopción técnico trabajo presentado vinculado trabajo final
+
+Estructura general trabajo final necesidad gestión recurso hídrico adopción política orientado referente escasez dato real estudiar posible solución torno estrategia utilizado procedimiento realizado función método
+
+cual brindar encuadre teórico dar sustento elección realizado guir torno cual trabajar permitir enmarcar problemático dentro contexto presentar conclusión destacar trabajo futuro considerar relevante acrónimo sigla último exponer referencia bibliografío consultado
+
+ambiental desafío afrontar
+
+industrial provocado calidad agua deteriorar manera alarmante vertido tratado llevado Río Reconquista convertir él cuerpo tanto diversidad cantidad desecho verter Río Reconquista situación adquirir especial relevancia impacto potencial tal descarga poder preocupación radicar riesgo suponer calidad agua utilizado millón encontrar hacer mucho especie habitar cuerpo complejidad adicional momento establecer regulación uniforme protección uno forma resolver problema consistir desarrollo Índice Calidad
+
+decisión relacionado política público monitoreo efecto largo plazo indicador general agua término aptitud diverso ayudar transmitir información recurso hídrico manera interpretar convertir recurso indispensable diseño evaluación política público buscar monitorear calidad cuerpos agua asegurar correcto habitante cuencar característica socioeconómico cultural común
+
+el contaminación recurso hídrico mayor esperado problema aspecto identificado Plan Nacional Federal Recursos
+
+el calidad agua Río Reconquista varía largo cuenca tal hecho mayor aportar vertido sustancia contaminante degradado debido aporte acumulado contaminante vertido todo cuenca vertido contaminante origen amenazar adicional debido posible contaminación agua subterráneo el Río Reconquista sedar transformar río principalmente urbano debido
+
+Cuenca Río Reconquista modificado relación poblador cuencar evaluación calidad agua dinámico proceso contaminación objeto desarrollar herramienta permitir efectuar proceso saneamiento combinar varios parámetro seleccionado función capacidad representar
+
+adecuadamente resultado índizar tomar decisión informado el ICA herramienta diseñado sintetizar simplificar gran cantidad
+
+diagnósticir obtener imagen preciso detallado salud ecosistemo tener base sólido tomar decisión informado gestión protección delimitar área estudio solamente aquel sección cuenco alto Río convalidación dicho parámetro definir considerar pertinente
+
+identificar erosión suelo fuente contaminación río
+
+salinidad poder relacionado fuente contaminación desecho
+
+arroir el Torres encontrar cielo abierto mientras arroyo Salguero encontrar deber mejor condición primero protegido factible construir sistema permitir generar información histórico calidad agua Río Reconquista dato poder arrojar luz calidad
+
+eficiente escasez dato real Agua agua superficial Cuenca Alta Río Reconquista partido Merlo objetivo crear modelo predictivo permitir monitorear predecir calidad agua investigador investigador aprovechar máximo potencial dato
+
+obtención conjunto dato suficientemente robusto realizar buscar alternativa complementario permitir acelerar proceso obtención aumentar masa dato modo poder aplicar modelo estadístico IA largo vida proyecto objeto ir ajustar nivel error medido investigación existir varios método generar dato sintético mencionado puesto dos técnica seleccionado generación dato sintético el elección sólo dos técnica fundamentar objetivo acotar costo temporal
+
+el necesidad contar gran cantidad dato comenzar aplicación técnico mineer dato entrenamiento modelos machine learning hacer Técnicas generación dato sintético el técnico generadora dato modelo crear dato sintético partir dato Simulación Montecarlo estribar generación múltiple muestra aleatorio fin estimar solución problema complejo poder resultar difícil imposible resolver través el simulación estocásticar método utilizar proceso aleatorio modelo estocástico menos variable mismo tomado dato
+
+simulación Montecarlo tipo simulación estocástico permitir obtener simulación mediante técnica radicar calcular medio desviación estándar Mediante utilización generador número aleatorio distribución Utilizamos modelo matemático describir interacción dentro sistema modelo realista sujeto riesgo variación sistemático parámetro
+
+él expresado aquí permitir comprender alguno manera diferencia fundamental
+
+tomar valor dentro rango específico venir dado área bajo curva función densidad rango obtener mediante integración función probabilidad discreto continuo caso utilizar él ambos descripción el función distribución probabilidad discreto describir probabilidad acumulado variable aleatorio continuo tomar valor menor igual proporcionar probabilidad acumulado variable aleatorio continuo tomar el función distribución conjunto describir probabilidad dos variable
+
+distribución acumulado conjunto permitir calcular probabilidad dos variable aleatorio tomar valor menor igual valor arbitrario establecido el modelización escenario contexto realizar comúnmente generar número simular intensidad evento alguno variable tomar valor perteneciente
+
+Redes Neuronales Autoencoders aspecto ir avance tecnológico solución innovadora diverso inteligencia humano emular funcionalidad cerebro interés centrar implementar sistema permitir procesar grande cantidad dato identificar especialmente efectivo tarea modelar relación complejo entrada
+
+sistema procesamientir información cuyo estructura funcionamiento conjunto elemento simple procesamiento llamado nodo neurona conectado conexión valor numérico modificable denominado Resulta importante altura señalar aprendizaje máquina método Entrenar RNA buscar conjunto pesos asociado cada neurona fin sistemáticamente cambiado algoritmo entrenamiento elegido formar tal entrada diferenciar resultado RNA dato actual
+
+Autoencoder básico estándar reducido codificado dato entrado denominado espacio latente entrenar generar imagen salido conservar característica imagen generación dato sintético debido entrenamiento conseguir réplica poder considerar él representación condensar patrón relevante espacio entrado original alto dimensión x espacio latente representación bajo dimensión punto dato contener información
+
+similar x deber tener vector latente similar valor disímil x deber Autoencoder Variacional ser modelo aprendizaje supervisado incorporar distribución probabilidad
+
+vacío espacio latente producido autoencoder soler ser distribución punto espacio latente seguir distribución normal VAE diseñado retornar distribución representación dato promedio varianzar medio compresión descompresión
+
+aprendido tomar valor demasiado probabilístico consecuencia tiendar este dos término actuar conjunto incrementar aprendizaje red cuyo objetivo mantener dato dentro espacio latente continuo mismo tiempo pérdida minimizo mediante algoritmo optimización basado descenso
+
+Cópula Gaussiana cantidad configuración posible crecer exponencialmente número variable cópular función distribución probabilidad basado distribución normal este función describir distribución conjunto múltiple variable aleatorio analizar generador estadístico aprender dependencia dato simular distribución Redes Neuronales Generativas Adversarias utilizado generación dato sintético basado Teoría Juegos dos retroalimentación recibir clasificación discriminador ir optimizar
+
+ajuste Mediante método denominado backpropagation realizar proceso iterativo generador discriminador obtener aprendizaje alto nivel conforme métrica
+
+Obtención dato sintético evaluación resultado Ciclo Vida Ciencia Datos el Ciclo Vida Ciencia Datos proceso estructurado definir etapa
+
+Comprensión Negocio En fase definir objetivo proyecto requisito punto visto Comprensión Datos evalúa calidad dato identificar posible problema valor faltant Preparación Datos este fase importante preparar dato formato adecuado
+
+Modelado Evaluación
+
+Despliegue implementación técnico modelo presentación resultado equipo Obtención preparación dato real
+
+presupuestaria sólo poder recolectar analizar dos muestra agua limpiezar procesamiento extracción característico conjunto dato real arrojar varios observación valor atípico tal poder observar él equipo investigación buscar reflejar realidad mismo constituir error
+
+conocer correlación variable fundamental generar dato sintético
+
+de manera asegurar dato generado realista útil análisis
+
+este modelo requerir adecuado escala dato optimizar A luz efectuado análisis exploratorio dato obtener dato sintético aventurar él realizar ejemplo regresión lineal múltiple
+
+a pesar posible generalizar resultado obtenido preliminarmente dado incluir información herramiento investigación además implicar ahorro este exploración inicial dar pie desarrollo futuro trabajo técnico Modelización optimización método generación dato sintético En sección describir procedimiento realizado pos obtención eficiencia distribución seguido parámetro real relación
+
+asegurar representativo fundamental garantizar validez complejo detectar relación patrón poder ser evidente modelo machine learning resultar fundamental dado algoritmo aprender importante evitar modelo aprendo patrón erróneo ver afectado cantidad dato real existente mediante proceso simulación permitir extender conjunto amplio variado observación basar
+
+Método Montecarlo aleatorio resolver problema poder ser demasiado complejo abordar probabilidad representar incertidumbre inherente dato fenómeno este permitir mejorar calidad fiabilidad resultado obtenido depender tomar base realizar simulación distribución probabilidad normal él realizar simulación estocástico utilizar mencionado técnica Montecarlo simulación efectuar modo resulte acorde resultado obtenido equipo resultar trabajo ingeniero químico objeto establecer valor medio desviar estándar muestra tener contar historia evolución momento
+
+dato poseer desvío estándar elevado si bien valor correcto conforme dato sintético similar posible dato real ensayar múltiple probabilidad dato simulado dejar corresponder él distribución
+
+
+
+funcionar mejor variable inherentemente negativas sesgo
+
+propósito estabilizar varianza distribución asemeje
+
+Cox mejorar eficacia modelo estadístico basar supuesto
+
+lograr mejor desempeño aquel realizado luego realizar hacer dato transformado ajustar mejor distribución
+
+Redes Neuronales Autoencoders Como alternativo método Montecarlo generación dato sintético existir decodificador intentar reconstruir dato original partir representación
+
+representación comprimido permitir reconstruir dato entrado manera útil creación dato sintético mayor capacidad VAE poder capturar patrón complejo generar dato reflejar manera distinto arquitectura mismo proceso evalúa performance alcanzado Basic Autoencoder
+
+finalmente capa salida utilizar función activación sigmoidir vector tamaño igual número característico conjunto dato original diferenciar promedio cuadrado valor entrado valor reconstruido Variational Autoencoder este dos vector definir medio varianza distribución gaussián utilizar finalmente capa salida utilizar función activación sigmoidir
+
+medir diferencia distribución latente aprendido modelo
+
+observar él optado arquitectura poco capa oculto intermedio no existir porcentaje similitud mínimo universalmente consensuado generar privacidad dato real ejemplo dato estudio médico Con finalidad evaluar desempeño diferente modelo generación dato sintético utilizar modelo probabilístico técnico aprendizaje provee conjunto herramienta evaluar calidad dato sintético En presente trabajo utilizar clase QualityReport dentro SDMetrics posible crear instancia permitir generar informe calidad evaluar dato
+
+proporcionar resumen detallado similitud estadístico dos conjunto Evaluating Column Pair Trends el evaluación tendencias pares columnas implicar analizar cómo relacionar dos columna si dato sintético lograr capturar correctamente relación Evaluating Column Shapes
+
+el métrica utilizar sdmetrics evaluar forma columna soler descripta evaluar calidad dato sintético obtener puntuación dicho métrica posible valuar modificación realizado arquitectura modelo generación dato efecto producir diverso ajuste neuronal mejorar considerablemente alcanzar desempeño igual mejor desempeño obtenido utilizar encuadre estadístico red
+
+Distribuciones negativas Transformación dato concerniente Simulación pormenorizar resultado obtenido cada informe mejor Autoencoder Variacional precisar forma general distribución individual columna dato resultar razonable debido capacidad red neuronal identificar patrón fortaleza diferente aspecto generación dato sintético elección
+
+analizar dos alternativa arrojar resultado satisfactorio permitir
+
+
+
+Capítulo V Trabajos relacionado el necesidad gestionar conservar recurso hídrico manera eficiente preciso constituir problemático actualidad resultar cada vez urgente atender investigador abordado problemático mediante implementación capacidad manejar grande conjunto dato eficaciar detección Entre ventaja identificado trabajo considerado destacar inmenso mejora precisión predicción mediante algoritmo avanzado permitir manejar multifuncionalidad recurso hídrico representar oportunidad mejorar futuro dato alto calidad poder ser desafío área recolección dato
+
+técnico aprendizaje automático utilizado estimación calidad Mediante logra identificar patrón dato existente predecir calidad agua cómo dato poder ser utilizar crear modelo predictivo mejorar herramienta mejorado arrojo buen resultado comparación técnico característico problema desear abordar estrategia implementar Entre ventaja común dicho técnico señalar capacidad procesar grande Entre ventaja enfoque presentado encontrar facilidad interpretación árbol decisión poder volver él complejo menos manejabl grande
+
+enfoque combinar capacidad ARIMA modelar relación lineal capacidad propuesto consistir metodologir ARIMA capacidad reconocer patrón seri temporal estructurar red propagación hacia adelante hacia atrás el predicción modelo híbrido comparar obtenido modelo debido capacidad reconocer patrón seri temporal modelo híbrido brindar precisión mejor RNA método arima aplicación práctico resultar condicionado disponibilidad calidad dato uno problema significativo inherente predicción calidad agua dificultad obtención análisis cantidad mostrar voluminoso calidad
+
+necesario análisis preciso parámetro fisicoquímico microbiológico inmediato reducir costo tiempo involucrado monitoreo investigador mencionado revisión analizar cómo tecnología poder tal objetivo diferente investigación contaminación afluent agua el trabajo ofrecer revisión detallado tecnología sensor analizar principal cuestión tener cuenta integración sensor basado iot algoritmo inteligencia artificial substancial manera casi instantáneo método muestreir análisis laboratorio tradicional tardar hora día caso requeer insumos
+
+calidad agua debido alto costo frecuencio limitado análisis el principal ventaja estudio demostración viabilidad usar dato satelital Entre ventaja estudio encontrar alto precisión modelo predicción implementación RNA herramienta estimación calidad
+
+procés información entrada capo salida neurón el aplicación índice biótico proporcionar forma práctico relativamente económico monitorear salud ecosistema acuático embargo resultado poder ver él influenciado factor biótico abiótico relacionado herramienta útil bajo requerimiento computacional gran eficiencia estimar resultar acertado afirmar agua esencial supervivencia humano afectar calidad agua incluir contaminación residuo industrial
+
+él señalado poder provocar presencia sustancia químico biológico nocivo documento expresar necesidad mejorar condición calidad agua potable reciente abordar método evaluación calidad agua política finalmente arguir mayor precisión evaluación calidad agua poder conducir mejor comprensión impacto ambiental planificación el estudio incluir uso amplio conjunto dato herramienta avanzado
+
+generar modelo óptimos permitir disminuir costo tiempo monitoreo el índice propuesto desarrollado considerar factor local específico útil identificar área afectado evaluar efectividad estrategia remediación restauración ecológico tramo deteriorado distinto actividad explicar cómo afectar salud público hacer énfasis necesidad tratamiento preferido respecto índice aditivo sensible variación calidad agua evitar fenómeno eclipsamiento calidad agua el parámetro mayormente empleado ica presentado oxígeno disuelto
+
+analizar calidad agua objeto lograr gestión adecuado recurso debilidad simplificación excesivo poder resultar reducción calidad el trabajo mencionar necesidad reducir desigualdad acceso dato referenciar alrededor cual poder abordar indicador describir concepto causalidad actividad humano ejercer presión medio uno objetivo clave expresado trabajo reducir incertidumbre recurso destacar fundamental tarea establecer sistema sostenible ocasión utilización sistema dispositivo físico basado iot algoritmos
+
+factor poder impedir utilización tecnologío iot sensor artificial poder ser utilizar entrenar modelo predictivo optimizar calibración modelo mediante técnica Monte Carlo denominado Integrated Monte el mérito principal documento radicar aplicación práctico calibrar modelo posible dificultad generalización resultado diferente contexto generar conjunto dato sintético simular experimento número bajo
+
+documento mostrar utilidad dato sintético arrostrar escasez dato información sintético poder ser analizar detectar patrón inusual mitigar el tesis hacer valioso contribución demostrar aplicabilidad GAN generación demá efectividad producir dato sintético fiable valoración medio
+
+interpolación generación basado etiqueta clase crear dato simular el estudio ilustrar ambos técnica poseer capacidad generar dato sintético inicial robusto entrenar modelo eficaciar modelo depender
+
+conclusión trabajo futuro Conclusión augmentation fin sólo permitir crear masa dato necesario llevar adecuado realizar proceso machine learning alimentar modelo aprendizaje el viabilidad aplicación método generación dato sintético radicar fundamental proyecto recolección nuevo muestra resultar complejo A luz trabajo realizado concluir posible aplicar enfoque estadístico reproducir forma general distribución individual columna dato basado red neuronal sobresalido captura relación lineal
+
+lineal pares columna consistencia general dato múltiple cantidad limitado dato real diseñado ajustar parámetro distribución dato generar nuevo muestra partir modelo red neuronal mejorar considerablemente alcanzar desempeño Para fenómeno estudiar ambos método viable proporcionar trabajo futuro En presente trabajo mencionado cuatro técnica utilizado generación
+
+conclusión poder generalizar él dado dataset pequeño realizar
+
+Anexo I
+
+Glosario Rama inteligencia artificial inspirar principio evolución biológico Organismo interjurisdiccional creado gestión integral sustentable cuenca
+
+Indicador cantidad oxígeno necesario descomposición materio orgánico Cantidad oxígeno requerido oxidar químicamente materia orgánico inorgánico Función mostrar probabilidad variable aleatorio tome valor menor Enfoque administración recurso hídrico buscar uso sostenible agua
+
+
+
+
+
+Plan Argentina organizar política gestión sostenible recurso hídrico Organismo Argentina responsable gestión regulación recurso hídrico
+
+
+
+Referencias
+
+
+
+aplicación modelo machinar learning proyecto interdisciplinario
+
+versus red neuronal artificial análisi dato calidad agua
+
+riesgo salud exposición infantil plomo suelo contaminado
+
