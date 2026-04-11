@@ -69,7 +69,7 @@ def clean_text(text):
     return cleaned_text.strip()
 
 def preprocess_text(text):
-    text = clean_text(text)
+    #text = clean_text(text)
     text = remove_stopwords(text)
     text = lemmatize_text(text)
     #opcionalmente podria haber aplicado stemming, pero en este caso no lo hago 
