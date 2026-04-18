@@ -1,0 +1,14 @@
+# Ignorar archivos de entorno y secretos
+.env
+
+# Entradas comunes de Python (opcionales)
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+env/
+venv/
+
+# Carpetas de datos locales generadas por este proyecto
+db/
+textos/

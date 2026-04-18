@@ -56,9 +56,6 @@ def clean_text(text):
         # elimino líneas de watermarks comunes
         if re.search(r'watermark|confidencial|sample', line, re.IGNORECASE):
             continue
-        #elimino caracteres especiales
-        if re.search(r"[^a-záéíóúñü\s]", line, re.IGNORECASE):
-            continue
         cleaned_lines.append(line)
     # normalizar saltos de línea y espacios extra
     cleaned_text = '\n'.join(cleaned_lines)
@@ -68,8 +65,54 @@ def clean_text(text):
     cleaned_text = cleaned_text.encode('utf-8', 'ignore').decode('utf-8')
     return cleaned_text.strip()
 
+def remove_repeated_headers(pages, min_occurrence=2):
+    """
+    Detecta y elimina encabezados que se repiten en varias páginas.
+    Recibe una lista de strings (cada string es el texto de una página).
+    """
+    # obtener la primera línea no vacía de cada página
+    first_lines = []
+    for p in pages:
+        fl = ""
+        for line in p.splitlines():
+            s = line.strip()
+            if s:
+                fl = s
+                break
+        first_lines.append(fl)
+
+    # contar ocurrencias
+    counts = {}
+    for fl in first_lines:
+        counts[fl] = counts.get(fl, 0) + 1
+
+    # seleccionar candidatos a encabezado (aparecen al menos min_occurrence veces y son cortos)
+    candidate_headers = set()
+    for line, cnt in counts.items():
+        if not line:
+            continue
+        if cnt >= min_occurrence:
+            words = line.split()
+            if 1 < len(words) <= 8 and len(line) <= 120:
+                candidate_headers.add(line)
+
+    # eliminar el encabezado candidato del inicio de cada página
+    cleaned_pages = []
+    for p, fl in zip(pages, first_lines):
+        cleaned = p
+        if fl in candidate_headers:
+            lines = cleaned.splitlines()
+            i = 0
+            while i < len(lines) and not lines[i].strip():
+                i += 1
+            if i < len(lines) and lines[i].strip() == fl:
+                del lines[i]
+                cleaned = "\n".join(lines)
+        cleaned_pages.append(cleaned)
+    return cleaned_pages
+
 def preprocess_text(text):
-    #text = clean_text(text)
+    text = clean_text(text)
     text = remove_stopwords(text)
     text = lemmatize_text(text)
     #opcionalmente podria haber aplicado stemming, pero en este caso no lo hago 
@@ -84,9 +127,13 @@ for filename in os.listdir(pdf_dir): #itero por cada pdf en el directorio
         pdf_path = os.path.join(pdf_dir, filename)#genero el path del pdf
         txt_path = os.path.join(txt_dir, os.path.splitext(filename)[0] + ".txt") #genero el path del txt donde voy a escribir
         with fitz.open(pdf_path) as doc, open(txt_path, "w", encoding="utf-8") as txt_file: #abro el pdf y el txt para escribir el texto extraído
-            for page_num, page in enumerate(doc, start=1):
-                text = page.get_text("text") #obtengo el texto
-                text = preprocess_text(text) #aplico el preprocesamiento al texto extraído
+            # extraigo texto de todas las páginas primero
+            pages_raw = [page.get_text("text") for page in doc]
+            # elimino encabezados repetidos (ej: nombre del autor que aparece en cada página)
+            pages = remove_repeated_headers(pages_raw, min_occurrence=2)
+            # proceso cada página ya sin encabezados repetidos
+            for page_text in pages:
+                text = preprocess_text(page_text) #aplico el preprocesamiento al texto extraído
                 txt_file.write(text) #escribo el texto procesado en el txt
                 txt_file.write("\n\n") #separo cada pagina con un salto doble
         print(f"Texto extraído de {filename} y guardado en {txt_path}")

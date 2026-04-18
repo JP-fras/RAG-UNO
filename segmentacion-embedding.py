@@ -5,31 +5,36 @@
 #pip install chromadb
 #pip install transformers
 #pip install accelerate
+#pip install -q -U google-genai
 
 #importo las librerias de langchain para generar chunks, embeddings y almacenar los embeddings en un vector store en memoria local
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
+from pathlib import Path
+from dotenv import load_dotenv
 import os
+import time
 #importo librerias de chromadb
 import chromadb
 from chromadb.config import Settings
 #
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
 import torch
+#importo libreria para api de gemini
+from google import genai
+from google.genai import types
+
+#cargo mi variable de api key
+env_path = os.path.join(os.path.dirname(__file__), ".env")  # Asegúrate de que el archivo .env esté en el mismo directorio que este script
+load_dotenv(dotenv_path=env_path)  # o simplemente load_dotenv() si ejecutas desde la raíz del proyecto
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
 
 #directorio donde se encuentran los txts procesados
 txt_dir = os.path.join(os.path.dirname(__file__), "textos")
 db_dir = os.path.join(os.path.dirname(__file__), "db")
 
-# Configuración del splitter
-# chunk_size = 200 tokens
-# chunk_overlap = 20 tokens (10% de 200)
-splitter = RecursiveCharacterTextSplitter(
-    chunk_size=200, #cantidad maxima de caracteres por chunk
-    chunk_overlap=20, #cantidad de solapamiento entre chunks (20 caracteres)
-    length_function=len,  # aquí usamos len, es la deafult
-)   
 
 #configuracion de la base de datos vectorial
 chroma_client = chromadb.PersistentClient(path=db_dir) #creo un cliente de chromadb para almacenar los embeddings de manera persistente en el directorio db
@@ -44,24 +49,18 @@ model = AutoModelForCausalLM.from_pretrained(
 #   attn_implementation="flash_attention_2" <- uncomment on compatible GPU
 )
 tokenizer = AutoTokenizer.from_pretrained(model_id)
-# Note: streaming increases overhead. we won't stream tokens for faster inference.
-
 #funcion para generar la respuesta a partir de la consulta del usuario, utilizando los chunks mas relevantes obtenidos a partir
 #de la consulta y el modelo de lenguaje para generar una respuesta estructurada y citada con las fuentes utilizadas
-def generate_response(query, top_k_chunks: int = 5):
+def generate_response_local(query, top_k_chunks: int = 10):
+
     # Obtener los top-k chunks más relevantes para reducir prompt y acelerar
     top_chunks = query_embedding(query, top_k=top_k_chunks)
 
     # Construir prompt con template estructurado para respuestas largas y citadas
     system_prompt = (
-        "Eres un asistente experto. Responde basándote únicamente en las fuentes indicadas; no inventes información. "
-        "Si la información es insuficiente, responde 'No hay suficiente información en las fuentes'. "
-        "Estructura la respuesta así:\n"
-        "Primero un pequeño resumen ejecutivo (2–3 frases).\n"
-        "Luego desarrolla en 4 párrafos (~100–150 palabras cada uno), con ejemplos.\n"
-        "Finalmente, una conclusión breve.\n"
-        "Debajo de todo las Fuentes: lista con IDs citados al final de cada párrafo.\n"
-        "Entrega la respuesta en un formato de texto en parrafos. Al final, entre corchetes, indica el/los ID(s) de chunk usados."
+        "Eres un asistente experto que responde de acuerdo a los fuentes proporcionadas mediante un chunk traido de un rag. Responde basándote únicamente en las fuentes indicadas; no inventes información. "
+        "Si la información es insuficiente o la pregunta es muy corta o ambigua, responde 'No hay suficiente información en las fuentes' y da una explicación breve/general sobre lo que haz . "
+        "Debes responder teniendo en cuenta que eres un chatbot que responde a preguntas de usuarios, por lo que tu respuesta debe ser clara, concisa y fácil de entender. "
     )
 
     # Formatear las fuentes (top chunks) de forma concisa
@@ -70,12 +69,14 @@ def generate_response(query, top_k_chunks: int = 5):
     else:
         sources_text = ""
 
-    print(f"Top {len(top_chunks)} chunks relevantes para la consulta:\n{sources_text}\n")
+    #print(f"Top {len(top_chunks)} chunks relevantes para la consulta:\n{sources_text}\n")
 
     user_prompt = (
-        f"Fuentes (top {len(top_chunks)}):\n{sources_text}\n\n"
+        f"Eres un asistente experto que responde de acuerdo a los fuentes proporcionadas en chunks, estos chunks son los 10 mas relacionados con la pregunta y son extraidos de un rag que ya los pondero. Responde basándote en la informaicon de las fuentes. "
+        f"Si la información es insuficiente o la pregunta es muy corta o ambigua, responde 'No hay suficiente información en las fuentes' y da una explicación breve/general sobre lo que haz . "
+        f"Debes responder teniendo en cuenta que eres un chatbot que responde a preguntas de usuarios, por lo que tu respuesta debe mantener una estructura clara, concisa y fácil de entender. "
         f"Pregunta: {query}\n\n"
-        f"Responde siguiendo la estructura solicitada en el system prompt: {system_prompt}"
+        f"Fuentes (top {len(top_chunks)}):\n{sources_text}\n\n"
     )
 
     messages = [
@@ -101,8 +102,8 @@ def generate_response(query, top_k_chunks: int = 5):
         output = model.generate(
             input_ids=input_ids,
             attention_mask=attention_mask,
-            do_sample=True,
-            temperature=0.2,
+            do_sample=False,
+            temperature=0.4,
             top_p=0.95,
             top_k=50,
             repetition_penalty=1.1,
@@ -122,9 +123,61 @@ def generate_response(query, top_k_chunks: int = 5):
 
     print(f"Respuesta generada: {text}")
 
+def generate_response_api(query, top_k_chunks: int = 10):
+    top_chunks = query_embedding(query, top_k=top_k_chunks)
+
+    # Formatear las fuentes (top chunks) de forma concisa
+    if top_chunks:
+        sources_text = "\n\n".join([f"[{c['id']}] {c['doc']}" for c in top_chunks])
+    else:
+        sources_text = ""
+
+    #print(f"Top {len(top_chunks)} chunks relevantes para la consulta:\n{sources_text}\n")
+
+    user_prompt = (
+        f"Eres un asistente experto que responde de acuerdo a los fuentes proporcionadas en chunks, estos chunks son los 10 mas relacionados con la pregunta y son extraidos de un rag que ya los pondero. Responde basándote en la informaicon de las fuentes. "
+        f"Si la información es insuficiente o la pregunta es muy corta o ambigua, responde 'No hay suficiente información en las fuentes' y da una explicación breve/general sobre lo que haz . "
+        f"Debes responder teniendo en cuenta que eres un chatbot que responde a preguntas de usuarios, por lo que tu respuesta debe mantener una estructura clara, concisa y fácil de entender. "
+        f"Pregunta: {query}\n\n"
+        f"Fuentes (top {len(top_chunks)}):\n{sources_text}\n\n"
+    )
+
+    client = genai.Client()
+
+    response = client.models.generate_content(
+        model="gemma-4-26b-a4b-it",
+        contents=user_prompt,
+        # Si descomento habilito el pensamiento del modelo, dando mejores respuesta a coste de tiempo
+        config=types.GenerateContentConfig(
+            thinking_config=types.ThinkingConfig(thinking_level="high")
+        ),
+    )
+
+    print(f"Respuesta generada: {response.text}")
+
+
 def chunk_and_embed():
-    collection.delete() #elimino la colección de chromadb para evitar duplicados, solo lo hago la primera vez que genero los chunks y embeddings, luego lo comento para no eliminar los datos ya almacenados
-    collection = chroma_client.create_collection(name="chunks_embeddings") #creo la colección de chromadb donde voy a almacenar los embeddings generados, si ya existe la colección, la creo, sino la obtengo
+    # Evita UnboundLocalError: usa la variable global `collection`
+    global collection
+
+    # Configuración del splitter
+    # chunk_size = 200 tokens
+    # chunk_overlap = 20 tokens (10% de 200)
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=250, #cantidad maxima de caracteres por chunk
+        chunk_overlap=20, #cantidad de solapamiento entre chunks (20 caracteres)
+        length_function=len,  # aquí usamos len, es la deafult
+    )   
+
+    # Intento vaciar la colección existente; si falla, borro y recreo la colección
+    try:
+        collection.delete()
+    except Exception:
+        try:
+            chroma_client.delete_collection(name="chunks_embeddings")
+        except Exception:
+            pass
+        collection = chroma_client.create_collection(name="chunks_embeddings")
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2") #objeto encargado de generar los embeddings de 384 dimensiones utilizando el modelo "all-MiniLM-L6-v2" de HuggingFace(https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
     id_archivo = 0
     for filename in os.listdir(txt_dir): #itero por cada txt en el directorio
@@ -143,7 +196,7 @@ def chunk_and_embed():
                     added += 1
                 print(f"Chunks añadidos para {filename}: {added}")
 
-def query_embedding(query, top_k: int = 5):
+def query_embedding(query, top_k: int = 10):
     # Devuelve una lista de dicts [{'id': id, 'doc': document}, ...] con los top_k resultados
     result = collection.query(
         query_texts=[query], #consulta de texto que quiero vectorizar y comparar con los embeddings almacenados en la colección de chromadb
@@ -154,16 +207,31 @@ def query_embedding(query, top_k: int = 5):
     distances = result.get('distances', [[]])[0]
     out = []
     for _id, _doc, _distances in zip(ids, docs, distances):
-        if _distances > 0.5:
-            out.append({'id': _id, 'doc': _doc})
+        out.append({'id': _id, 'doc': _doc})
     return out
     
 
 def main():
     #chunk_and_embed() #lo llamo solo la primera vez para generar los chunks y embeddings y guardarlos, luego lo comento para no generar duplicados en la base de datos de chromadb
-    while True:
-        pregunta = input("Ingrese su pregunta: ")
-        generate_response(pregunta)
+    #while True:
+    #    pregunta = input("Ingrese su pregunta: ")
+    #    generate_response_api(pregunta)
+    #mide los tiempos de respuesta de cada metodo para comparar
+    inicio = time.time()
+    print("RESPUESTA MEDIANTE API DE GEMINI:")
+    generate_response_api("quien es el autor o autores?")
+    generate_response_api("cual es el objetivo del proyecto?")
+    generate_response_api("donde queda el rio reconquista?")
+    # ----------------------
+    fin = time.time()
+    print(f"Tiempo de respuesta de la API: {fin - inicio} segundos")
+    inicio = time.time()
+    print("\nRESPUESTA MEDIANTE MODELO LOCAL:")
+    generate_response_local("quien es el autor o autores?")
+    generate_response_local("cual es el objetivo del proyecto?")
+    generate_response_local("donde queda el rio reconquista?")
+    fin = time.time()
+    print(f"Tiempo de respuesta del modelo local: {fin - inicio} segundos")
 
 if __name__ == "__main__":
     main()
