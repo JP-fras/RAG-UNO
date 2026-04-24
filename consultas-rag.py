@@ -1,25 +1,15 @@
-#pip  install  langchain-text-splitters
-#pip install -qU langchain-huggingface
-#pip install sentence-transformers
-#pip install -U "langchain-core"
 #pip install chromadb
 #pip install transformers
 #pip install accelerate
 #pip install -q -U google-genai
 
-#importo las librerias de langchain para generar chunks, embeddings y almacenar los embeddings en un vector store en memoria local
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_core.vectorstores import InMemoryVectorStore
-from pathlib import Path
 from dotenv import load_dotenv
 import os
 import time
 #importo librerias de chromadb
 import chromadb
-from chromadb.config import Settings
 #
-from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
+from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 #importo libreria para api de gemini
 from google import genai
@@ -35,10 +25,9 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 txt_dir = os.path.join(os.path.dirname(__file__), "textos")
 db_dir = os.path.join(os.path.dirname(__file__), "db")
 
-
 #configuracion de la base de datos vectorial
 chroma_client = chromadb.PersistentClient(path=db_dir) #creo un cliente de chromadb para almacenar los embeddings de manera persistente en el directorio db
-collection = chroma_client.get_collection(name="chunks_embeddings") #obtengo la colección de chromadb donde voy a almacenar los embeddings generados, si ya existe la colección, la obtengo, sino la creo
+collection = chroma_client.get_collection(name="chunks_embeddings") #obtengo la colección de chromadb donde voy a almacenar los embeddings generados
 
 #configuracion del modelo de lenguaje para generar las respuestas a usuario
 model_id = "LiquidAI/LFM2.5-350M"
@@ -156,45 +145,7 @@ def generate_response_api(query, top_k_chunks: int = 10):
     print(f"Respuesta generada: {response.text}")
 
 
-def chunk_and_embed():
-    # Evita UnboundLocalError: usa la variable global `collection`
-    global collection
 
-    # Configuración del splitter
-    # chunk_size = 200 tokens
-    # chunk_overlap = 20 tokens (10% de 200)
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=250, #cantidad maxima de caracteres por chunk
-        chunk_overlap=20, #cantidad de solapamiento entre chunks (20 caracteres)
-        length_function=len,  # aquí usamos len, es la deafult
-    )   
-
-    # Intento vaciar la colección existente; si falla, borro y recreo la colección
-    try:
-        collection.delete()
-    except Exception:
-        try:
-            chroma_client.delete_collection(name="chunks_embeddings")
-        except Exception:
-            pass
-        collection = chroma_client.create_collection(name="chunks_embeddings")
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2") #objeto encargado de generar los embeddings de 384 dimensiones utilizando el modelo "all-MiniLM-L6-v2" de HuggingFace(https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
-    id_archivo = 0
-    for filename in os.listdir(txt_dir): #itero por cada txt en el directorio
-        id_archivo += 1
-        if filename.lower().endswith(".txt"):
-            txt_path = os.path.join(txt_dir, os.path.splitext(filename)[0] + ".txt") #genero el path del txt donde voy a escribir
-            with open(txt_path, "r", encoding="utf-8") as txt_file:
-                texto = txt_file.read() #leo el archivo txt completo
-                chunks = splitter.split_text(texto) #genero los chunks con las propiedades ya configuradas
-                print(f"---Archivo numero {id_archivo} Chunks para {filename} ---")
-                added = 0
-                for i, c in enumerate(chunks): #itero los chunks generados para el archivo actual, luego genero y almaceno el embedding de cada chunk en el vector store con un id unico
-                    id=f"{id_archivo}_{i}" #genero el id del chunk actual, donde f es el numero del archivo y i es el numero del chunk dentro de ese archivo
-                    chunk_embed = embeddings.embed_query(c) #agrego el chunk vectorizado al vector store con el id
-                    collection.add(ids=[id], embeddings=[chunk_embed], documents=[c])
-                    added += 1
-                print(f"Chunks añadidos para {filename}: {added}")
 
 def query_embedding(query, top_k: int = 10):
     # Devuelve una lista de dicts [{'id': id, 'doc': document}, ...] con los top_k resultados
