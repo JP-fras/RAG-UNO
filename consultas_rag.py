@@ -40,8 +40,9 @@ model = AutoModelForCausalLM.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 #funcion para generar la respuesta a partir de la consulta del usuario, utilizando los chunks mas relevantes obtenidos a partir
 #de la consulta y el modelo de lenguaje para generar una respuesta estructurada y citada con las fuentes utilizadas
-def generate_response_local(query, top_k_chunks: int = 10):
-
+def generate_response_local(query, top_k_chunks):
+    if top_k_chunks is None:
+        top_k_chunks = 10
     # Obtener los top-k chunks más relevantes para reducir prompt y acelerar
     top_chunks = query_embedding(query, top_k=top_k_chunks)
 
@@ -112,7 +113,9 @@ def generate_response_local(query, top_k_chunks: int = 10):
 
     print(f"Respuesta generada: {text}")
 
-def generate_response_api(query, top_k_chunks: int = 10):
+def generate_response_api(query, top_k_chunks):
+    if top_k_chunks is None:
+        top_k_chunks = 10
     top_chunks = query_embedding(query, top_k=top_k_chunks)
 
     # Formatear las fuentes (top chunks) de forma concisa
@@ -147,7 +150,9 @@ def generate_response_api(query, top_k_chunks: int = 10):
 
 
 
-def query_embedding(query, top_k: int = 10):
+def query_embedding(query, top_k):
+    if top_k is None:
+        top_k = 10
     # Devuelve una lista de dicts [{'id': id, 'doc': document}, ...] con los top_k resultados
     result = collection.query(
         query_texts=[query], #consulta de texto que quiero vectorizar y comparar con los embeddings almacenados en la colección de chromadb
